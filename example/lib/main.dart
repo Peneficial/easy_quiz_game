@@ -6,6 +6,7 @@ void main() {
   runApp(const MyApp());
 }
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -44,7 +45,21 @@ class _MyHomePageState extends State<MyHomePage> {
     Navigator.of(context).push(
       MaterialPageRoute(
           fullscreenDialog: true,
-          builder: (_) => Scaffold(body: getGameWidget(context))),
+          builder: (_) => Scaffold(body: EasyQuizGameApp(
+      quizCategories: data,
+      primaryColor: Theme.of(context).primaryColor,
+      menuLogoPath: 'assets/images/logo.png',
+      buttonPath: 'assets/images/primary_button.png',
+      labelPath: 'assets/images/label.png',
+      bgImagePath: 'assets/images/bg.png',
+      gradient: LinearGradient(
+        stops: const [0, 1],
+        begin: const Alignment(1, -1),
+        end: const Alignment(0, 1),
+        colors: [Theme.of(context).primaryColor, const Color(0xff753bc6)],
+      ),
+      secondaryColor: const Color(0xff753bc6),
+    ))),
     );
   }
 
@@ -64,5 +79,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       secondaryColor: const Color(0xff753bc6),
     );
+    
   }
 }
