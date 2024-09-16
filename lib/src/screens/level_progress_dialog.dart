@@ -53,8 +53,8 @@ class LevelProgressDialog extends StatelessWidget {
                   child: Column(
                     children: [
                       const SizedBox(height: 40),
-                      Row(
-                        children: const [
+                      const Row(
+                        children: [
                           Expanded(
                             child: Image(
                               image: AssetImage('assets/images/box.png'),
